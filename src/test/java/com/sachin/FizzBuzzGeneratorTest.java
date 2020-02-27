@@ -19,8 +19,8 @@ public class FizzBuzzGeneratorTest {
   @ParameterizedTest(name = "{index}) {0} should be converted to \"{1}\"")
   @MethodSource("createNumbersWithExpectedConvertedNumbers")
   @DisplayName(
-      "Should convert a given number to Fizz if multiple of 3 or Buzz if multiple of 5 or "
-          + "FizzBuzz if multiple of 3 & 5 otherwise return original number")
+      "Should convert a given number to Fizz if divisible by 3 or has 3 in it; Buzz if multiple of 5 or has 5 in  it; "
+          + "FizzBuzz if above 2 criterias are met otherwise return original number")
   void shouldConvertNumberToFizzBuzzIfAppropriate(Integer number, String expectedConvertedNumber) {
     assertThat(fizzBuzzGenerator.convertToFizzBuzz(number)).isEqualTo(expectedConvertedNumber);
   }
@@ -58,13 +58,18 @@ public class FizzBuzzGeneratorTest {
         of(10, "Buzz"),
         of(11, "11"),
         of(12, "Fizz"),
-        of(13, "13"),
+        of(13, "Fizz"),
         of(14, "14"),
         of(15, "FizzBuzz"),
         of(16, "16"),
         of(17, "17"),
         of(18, "Fizz"),
         of(19, "19"),
-        of(20, "Buzz"));
+        of(20, "Buzz"),
+        of(31, "Fizz"),
+        of(33, "Fizz"),
+        of(35, "FizzBuzz"),
+        of(53, "FizzBuzz"),
+        of(55, "Buzz"));
   }
 }
