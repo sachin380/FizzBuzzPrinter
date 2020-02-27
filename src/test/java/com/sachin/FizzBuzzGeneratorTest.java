@@ -70,6 +70,7 @@ public class FizzBuzzGeneratorTest {
         of(33, "Fizz"),
         of(35, "FizzBuzz"),
         of(53, "FizzBuzz"),
-        of(55, "Buzz"));
+        of(55, "Buzz"),
+        of(98, "98"));
   }
 }
