@@ -19,7 +19,7 @@ public class FizzBuzzGeneratorTest {
   @ParameterizedTest(name = "{index}) {0} should be converted to \"{1}\"")
   @MethodSource("createNumbersWithExpectedConvertedNumbers")
   @DisplayName(
-      "Should convert a given number to Fizz if multiple by 3 or Buzz if multiple of 5 or "
+      "Should convert a given number to Fizz if multiple of 3 or Buzz if multiple of 5 or "
           + "FizzBuzz if multiple of 3 & 5 otherwise return original number")
   void shouldConvertNumberToFizzBuzzIfAppropriate(Integer number, String expectedConvertedNumber) {
     assertThat(fizzBuzzGenerator.convertToFizzBuzz(number)).isEqualTo(expectedConvertedNumber);
